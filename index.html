@@ -168,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         legend: { display: false },
                         scales: {
                             xAxes: [{ gridLines: { display: false } }],
-                            yAxes: [{ gridLines: { display: false } }, { ticks: { reverse: true } }],
+                            yAxes: [{ ticks: { reverse: true } }],
                         }
                     }
 
@@ -181,7 +181,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     //Make long drive chart
 
 
-                    //Make long putts chart
+                    //Make recent putts chart
+                    var recent_putts_canvas = $('#recent_putts').get(0).getContext('2d')
+
+                    var lineChartOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        legend: { display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false } }],
+                            yAxes: [{ ticks: { reverse: true } }],
+                        }
+                    }
+
+                    var lineChart = new Chart(recent_putts_canvas, {
+                        type: 'line',
+                        data: data.putts,
+                        options: lineChartOptions
+                    });
 
 
                     //Make "what's in the bag"
