@@ -179,7 +179,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     });
 
                     //Make long drive chart
+                    var drives_canvas = $('#recent_drives').get(0).getContext('2d')
 
+                    var lineChartOptions = {
+                        maintainAspectRatio: false,
+                        responsive: true,
+                        legend: { display: false },
+                        scales: {
+                            xAxes: [{ gridLines: { display: false } }],
+                        }
+                    }
+
+                    var lineChart = new Chart(drives_canvas, {
+                        type: 'line',
+                        data: data.drives,
+                        options: lineChartOptions
+                    });
 
                     //Make recent putts chart
                     var recent_putts_canvas = $('#recent_putts').get(0).getContext('2d')
