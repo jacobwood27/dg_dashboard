@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <tr>
                                                 <th>Date</th>
                                                 <th>Course</th>
-                                                <th>Result</th>
+                                                <th>Score</th>
                                             </tr>
                                         </thead>
                                         <tbody id="rounds">
@@ -174,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     var lineChart = new Chart(recent_scores_canvas, {
                         type: 'line',
-                        data: data.recent_scores,
+                        data: data.scores,
                         options: lineChartOptions
                     });
 
@@ -195,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         img.title = disc.id + '\n' +
                             disc.mold + '\n' +
                             'Plastic: ' + disc.plastic + '\n' +
-                            'Weight: ' + disc.weight + 'g' + '\n' +
+                            'Mass: ' + disc.mass + 'g' + '\n' +
                             'Numbers: ' + disc.numbers;
                         div.appendChild(img);
                         gallery_div.appendChild(div);
@@ -216,7 +216,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         tr.appendChild(td);
 
                         var td = document.createElement('td');
-                        td.innerHTML = round.result;
+                        td.innerHTML = round.score;
                         tr.appendChild(td);
 
                         tr.addEventListener("click", () => {
