@@ -168,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         legend: { display: false },
                         scales: {
                             xAxes: [{ gridLines: { display: false } }],
-                            yAxes: [{ gridLines: { display: false } }]
+                            yAxes: [{ gridLines: { display: false } }, { ticks: { reverse: true } }],
                         }
                     }
 
@@ -220,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         tr.appendChild(td);
 
                         tr.addEventListener("click", () => {
-                            window.location.href = 'map/?round_id='+round.id;
+                            window.location.href = 'map/?round_id=' + round.id;
                         });
 
                         rounds_div.appendChild(tr);
